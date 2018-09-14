@@ -35,3 +35,22 @@ int main()
 }
 结果：0,20
 总结：此程序中，通过min函数返回m的引用，而m是x的引用，最后x被赋值0。
+
+const 与 指针：
+1）指向常量的指针
+int u=3;
+const int max=1;
+const int *p=&u;
+指针指向的对象的值不可修改，指针可改变。
+
+2）常量型指针
+int u=10;
+const int max=10;
+int * const p1=&u;
+指针值不能改变，且必须在定义时初始化。其指向的是变量。
+
+3）指向常量的常量型指针
+int u=10;
+const int max=10;
+const int * const p1=&u;
+指针值和指向对象的值都不能改变
