@@ -1,0 +1,37 @@
+引用：
+(1)基本概念
+int a=5;
+int &k=a; //k是a的引用
+
+(2)引用作为函数参数
+void swap(int &x,int &y)
+{
+	int temp =x;
+	x = y;
+	y = temp;
+}
+int main()
+{
+	int i=10,j=20;
+	swap(i,j);
+	cout<<i<<","<<j<<endl;
+	return 0;
+}
+结果：20,10;
+总结：引用作为函数参数时，形参对应实参的别名，形参的交换也就是实参的交换。
+使用指针参数和引用参数都能达到数据交换的目的，但引用参数更为直观，方便。
+
+(3)使用引用返回函数值
+int &min(int &m,int &n)
+{
+	return m<n?m:n;
+}
+int main()
+{
+	int x=10,y=20;
+	min(x,y)=0;
+	cout<<x<<","<<y<<endl;
+	return 0;
+}
+结果：0,20
+总结：此程序中，通过min函数返回m的引用，而m是x的引用，最后x被赋值0。
